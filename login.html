@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Administrator sign in for the School Equipment Tracking System.">
+  <title>Administrator Login | School Equipment Tracking System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/login.js" defer></script>
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="brand login-brand" href="login.html">School Equipment Tracking System</a>
+      <p class="eyebrow">Administrator access</p>
+      <h1 id="login-title">Sign in</h1> 
+      <p class="muted">Sign in with your administrator email and password to manage equipment records.</p>
+
+      <div id="login-error" class="message message-not-found" role="alert" hidden></div>
+      <form id="login-form">
+        <div class="control-group">
+          <label for="username">Administrator Email</label>
+          <input id="username" name="username" type="email" autocomplete="username" required>
+        </div>
+        <div class="control-group">
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+            <button class="button button-secondary password-toggle" id="toggle-password" type="button" aria-pressed="false">Show</button>
+          </div>
+        </div>
+        <button class="button login-submit" type="submit">Login</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

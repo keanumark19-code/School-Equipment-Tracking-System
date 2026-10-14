@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Add a school equipment record.">
+  <title>Add Equipment | School Equipment Tracking System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+  <script>window.AdminAuth.requireLogin();</script>
+</head>
+<body data-page="add-equipment">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/cpsu-logo.png" alt="Central Philippines State University logo">
+      <span class="brand-copy"><strong>School Equipment Tracking System</strong><span>Central Philippines State University</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="equipment.html">Equipment Records</a>
+      <a href="search.html">Search Equipment</a>
+      <a class="active" aria-current="page" href="add-equipment.html">Add Equipment</a>
+      <button class="nav-logout" id="logout-button" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container page-content">
+    <a class="back-link" href="equipment.html">← Back to equipment records</a>
+    <section class="page-heading">
+      <p class="eyebrow">Administrator</p>
+      <h1>Add equipment</h1>
+      <p>Enter all equipment details to add a record to the school inventory.</p>
+    </section>
+
+    <div id="form-message" class="message" role="status" aria-live="polite" hidden></div>
+    <a id="view-records-link" class="button add-record-button" href="equipment.html" hidden>View equipment records</a>
+    <form id="add-equipment-form" class="equipment-form">
+      <div class="form-grid">
+        <div class="control-group">
+          <label for="equipment-id">Equipment ID</label>
+          <input id="equipment-id" name="id" type="text" autocomplete="off" required>
+        </div>
+        <div class="control-group">
+          <label for="equipment-name">Equipment Name</label>
+          <input id="equipment-name" name="name" type="text" required>
+        </div>
+        <div class="control-group">
+          <label for="model">Model</label>
+          <input id="model" name="model" type="text" required>
+        </div>
+        <div class="control-group">
+          <label for="serial-number">Serial Number</label>
+          <input id="serial-number" name="serialNumber" type="text" required>
+        </div>
+        <div class="control-group">
+          <label for="purchase-date">Purchase Date</label>
+          <input id="purchase-date" name="purchaseDate" type="date" required>
+        </div>
+        <div class="control-group">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" required>
+        </div>
+        <div class="control-group">
+          <label for="category">Category</label>
+          <input id="category" name="category" type="text" list="equipment-categories" required>
+          <datalist id="equipment-categories">
+            <option value="Computers"></option>
+            <option value="Projectors"></option>
+            <option value="Chairs"></option>
+            <option value="Desks"></option>
+            <option value="Learning Tools"></option>
+          </datalist>
+        </div>
+        <div class="control-group">
+          <label for="condition">Condition</label>
+          <input id="condition" name="condition" type="text" required>
+        </div>
+        <div class="control-group">
+          <label for="status">Status</label>
+          <select id="status" name="status" required>
+            <option value="">Select status</option>
+            <option value="Available">Available</option>
+            <option value="In Use">In Use</option>
+            <option value="Under Maintenance">Under Maintenance</option>
+            <option value="Lost">Lost</option>
+            <option value="Damaged">Damaged</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="button" type="submit">Save Equipment</button>
+        <a class="button button-secondary" href="equipment.html">Cancel</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer"><div class="container">School Equipment Tracking System <span class="footer-university">· Central Philippines State University</span></div></footer>
+  <script src="js/storage.js"></script>
+  <script src="js/add-equipment.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View a school's equipment record details.">
+  <title>Equipment Details | School Equipment Tracking System</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+  <script>window.AdminAuth.requireLogin();</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="details">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/cpsu-logo.png" alt="Central Philippines State University logo">
+      <span class="brand-copy"><strong>School Equipment Tracking System</strong><span>Central Philippines State University</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a class="active" aria-current="page" href="equipment.html">Equipment Records</a>
+      <a href="search.html">Search Equipment</a>
+      <a href="add-equipment.html">Add Equipment</a>
+      <button class="nav-logout" id="logout-button" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container page-content">
+    <div id="equipment-state" class="message" role="status" aria-live="polite"></div>
+    <a class="back-link" href="equipment.html">← Back to equipment records</a>
+    <section class="page-heading">
+      <p class="eyebrow">Equipment record</p>
+      <h1>Equipment details</h1>
+    </section>
+    <div id="details-message" class="message" hidden></div>
+    <article id="equipment-details" class="detail-card" hidden></article>
+  </main>
+
+  <footer class="site-footer"><div class="container">School Equipment Tracking System <span class="footer-university">· Central Philippines State University</span></div></footer>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/details.js"></script>
+</body>
+</html>
